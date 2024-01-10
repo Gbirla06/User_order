@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Orders</title>
+</head>
+<body>
+    <% if (locals.allOrders.length===0) { %>
+        <h1>No Order Found!!</h1>
+        <p>Please add some orders$$</p>
+    <% } %>
+    <% if(locals.allOrders.length>0) { %>
+        <h1>Order details</h1>
+        <div>
+            <table>
+                <thead>
+                    <th>S.No</th>
+                    <th>User Id</th>
+                    <th>Sub Total</th>
+                    <th>Phone Number</th>
+                </thead>
+                <tbody>
+                    <% allOrders.forEach((order,index) => { %>
+                        <tr>
+                            <td><%= index+1 %></td>
+                            <td><%= order.user_id %></td>
+                            <td><%= order.sub_total %></td>
+                            <td><%= order.phone_number %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+</body>
+</html>

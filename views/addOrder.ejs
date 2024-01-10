@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Order</title>
+</head>
+<body>
+    <h1>Add Order</h1>
+    <% if (locals.msg) { %>
+        <p>Order added successfully</p>
+    <% } %>
+    <form method="post" action="/url/add-order">
+        <label>User Id</label>
+        <input type="text" required name="user_id" />
+        <label>Sub Total</label>
+        <input type="text" required name="sub_total" />
+        <label>Phone Number</label>
+        <input type="text" required name="phone_number" />
+
+        <button type="submit">Add-Order</button>
+    </form>
+
+</body>
+</html>
